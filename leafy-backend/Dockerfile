@@ -24,6 +24,6 @@ WORKDIR /app
 # 빌드 이미지에서 생성된 JAR 파일을 런타임 이미지로 복사
 COPY --from=build /app/build/libs/*.jar /app/leafy.jar
 
-EXPOSE 8080 
+EXPOSE 8000
 ENTRYPOINT ["java"] 
 CMD ["-jar", "leafy.jar"]
