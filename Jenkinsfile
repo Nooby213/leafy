@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_CREDENTIALS = credentials('docker') // Docker Hub에 대한 자격 증명 ID
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +20,9 @@ pipeline {
                 script {
                     dir('leafy-backend') {
                         // leafy-backend 폴더에서 Dockerfile을 사용하여 이미지를 빌드합니다.
-                        sh 'docker build -t leafy-backend:latest .'
+                        sh """
+                            docker build -t leafy-backend:latest .
+                        """
                     }
                 }
             }
