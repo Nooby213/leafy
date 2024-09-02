@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_CREDENTIALS_ID = credentials('docker') // Docker Hub에 대한 자격 증명 ID
-        DOCKER_REGISTRY = 'your-docker-registry' // Docker Hub 또는 개인 레지스트리
-    }
-
     stages {
         stage('Checkout') {
             steps {
