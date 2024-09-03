@@ -99,12 +99,13 @@ public class UserController {
      */
     @PostMapping("/login")
     public ResponseEntity<UserResponseDto> login(@RequestBody LoginDto loginDto) {
-        UserResponseDto userResponseDto = userService.getUserByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
-        if (userResponseDto.getUserId() != null) {
-            return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
+        // UserResponseDto userResponseDto = userService.getUserByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
+        // if (userResponseDto.getUserId() != null) {
+        //     return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
+        // } else {
+        //     return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        // }
+        return new ResponseEntity<>("Hello!!", HttpStatus.OK);
     }
 
 }
