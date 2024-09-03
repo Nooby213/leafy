@@ -98,14 +98,14 @@ public class UserController {
      * @return 로그인한 사용자 정보
      */
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<UserResponseDto> login(@RequestBody LoginDto loginDto) {
         // UserResponseDto userResponseDto = userService.getUserByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
         // if (userResponseDto.getUserId() != null) {
         //     return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
         // } else {
         //     return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         // }
-        return new ResponseEntity<>("Hello!!", HttpStatus.OK);
+        return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
     }
 
 }
