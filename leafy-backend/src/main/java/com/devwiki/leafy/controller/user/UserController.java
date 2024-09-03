@@ -98,7 +98,7 @@ public class UserController {
      * @return 로그인한 사용자 정보
      */
     @PostMapping("/login")
-    public ResponseEntity<UserResponseDto> login(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
         // UserResponseDto userResponseDto = userService.getUserByEmailAndPassword(loginDto.getEmail(), loginDto.getPassword());
         // if (userResponseDto.getUserId() != null) {
         //     return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
